@@ -1,0 +1,32 @@
+create table tableOne
+(
+    id_tableOne int(11)  not null AUTO_INCREMENT,
+    fieldOne varchar(45) not null,
+    fieldTwo varchar(45) not null,
+    fieldTree varchar(45) not null,
+    fieldFour varchar(45) not null,
+    fieldFive varchar(45) not null,
+    primary key(id_tableOne)
+);
+   
+create table tableTwo
+(
+	id_tableTwo int(11)  not null AUTO_INCREMENT,
+    fieldSix varchar(45) not null,
+    fieldSeven varchar(45) not null,
+    fieldEight varchar(45) not null,
+    fieldNine varchar(45) not null,
+    fieldTen varchar(45) not null,
+    id_tableOne INT not null,
+    primary key(id_tableTwo),
+    constraint id_tableOne foreign key(id_tableOne) references tableOne(id_tableOne) on delete restrict on update restrict
+); 
+
+INSERT INTO tableTwo(fieldSix, fieldSeven, fieldEight, fieldNine, fieldTen, id_tableOne)
+values ('Соколова','Елена','Петровна',"жен","нет",1),
+('Соколова1','Елена1','Петровна1',"жен","нет",2),
+('Соколова2','Елена2','Петровна2',"жен","нет",3),
+('Соколова3','Елена3','Петровна3',"жен","нет",4),
+('Соколова4','Елена4','Петровна4',"жен","нет",5);
+
+https://ru.wikibrief.org/wiki/Comparison_of_digital_audio_editors

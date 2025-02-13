@@ -1,0 +1,41 @@
+var canvas = document.getElementById("drawingCanvas");
+var context = canvas.getContext("2d");
+context.clearRect(0,0,canvas.width,canvas.height);
+context.fillStyle = "white";
+context.fillRect(0,0,canvas.width,canvas.height);
+let offset = 40; 
+let startX = 10;
+let startY = 40;
+let lineSizeX = 145 * 2;
+let lineSizeY = 110 * 2;
+for(let i=0;i<5;i++){
+if(i>1)
+  drawLine(context, startX,startY,startX + lineSizeX ,startY, "red");
+else
+  drawLine(context, startX,startY,startX + lineSizeX ,startY, "blue");
+startY= startY + offset;
+}
+startX = 40;
+startY = 20;
+for(let i=0;i<6;i++){
+if(i == 4)
+startX = startX + 5;
+if(i == 2){
+   startX= startX + 5;
+   drawLine(context, startX,startY-5,startX,startY  + lineSizeY-5, "blue");
+   startX= startX + 5;
+}
+else
+    drawLine(context, startX,startY,startX,startY  + lineSizeY , "blue");
+startX = startX + offset;
+}
+
+function drawLine(context, fromX, fromY, toX, toY,color){
+context.beginPath();
+context.moveTo(fromX,fromY);
+// команда рисования линии с координатами конца линии
+context.lineTo(toX,toY);
+context.strokeStyle = color; //цвет линии
+context.lineWidth = "2"; //толщина линии
+context.stroke(); // обводка линии
+}

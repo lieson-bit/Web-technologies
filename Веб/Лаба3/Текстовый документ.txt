@@ -1,0 +1,34 @@
+let N = Number(prompt("Введите число n:  "));
+let M = Number(prompt("Введите число m:  "));
+let Y = Number(prompt("Введите число y:  "));
+let matrix = Array.from(Array(M), () => new Array(N));
+let isRowErase = false;
+// Создание двумерного массива
+for (let i = 0; i < N; i++) {
+  for (let j = 0; j < M; j++) {  
+    matrix[i][j] = Number(prompt("Введите элемент A[" + i +"]["+ j +"]"));
+  }
+}
+for (let i = 0; i < N; i++) {
+  max = matrix[i][0];
+  for (let j = 0; j < M; j++) {  
+    if(max < matrix[i][j])
+    {
+      max = matrix[i][j];
+    }
+
+  }
+
+  if(max == Y)
+  {
+      isRowErase = true;
+      matrix.splice(i,1);
+      N--;
+      i=-1;
+  }
+}
+if(isRowErase == false)
+   alert("Ни одна строка не была удалена!");
+if(matrix.length == 0)
+   alert("Были удалены все строки!");
+matrix

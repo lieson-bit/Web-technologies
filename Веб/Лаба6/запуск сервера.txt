@@ -1,0 +1,4 @@
+D:\Server\bin\Apache24\bin\httpd.exe -k start
+D:\Server\bin\Apache24\bin\httpd.exe -k stop
+
+localhost:3030

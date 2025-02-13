@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track User Visits</title>
+    <!-- Подключаем внешний CSS для стилизации страницы -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Контейнер для отображения формы ввода имени -->
+    <div class="container">
+        <h2>Введите ваше имя</h2>
+        <input type="text" id="nameInput" placeholder="Введите ваше имя">
+        <button id="saveButton" onclick="saveName()">Сохранить</button>
+
+        <!-- Сообщение с отображением имени пользователя -->
+        <div id="greetingMessage"></div>
+
+        <!-- Сообщение с количеством посещений страницы -->
+        <div id="sessionCountMessage"></div>
+    </div>
+
+    <!-- Подключаем JavaScript файл для логики работы страницы -->
+    <script src="script.js"></script>
+</body>
+</html>

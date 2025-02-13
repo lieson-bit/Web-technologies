@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta
+            charset="UTF-8"
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+        <title>Анкета</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" href="images/icon.ico" type="image/x-icon">
+        <script type="text/javascript" src="js/events.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <h1>Форма звука</h1>
+            <img src="images/logo.png" width="50" height="50" alt="logo" />
+            <p>Анкета</p>
+        </header>
+        <nav>
+            <!-- навигация по сайту -->
+            <ul class="ulNav">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="second.html">Воспроизведение и аудиоредакторы</a></li>
+                <li><a href="source.html">Использованные источники</a>
+                    <ul class="dropdown">
+                    <li><a href="https://habr.com/ru/companies/leader-id/articles/531672/">Принципы обработки студийного звука и легенды динамической компрессии</a></li>
+                    <li><a href="https://dic.academic.ru/dic.nsf/ruwiki/196715">Аудиоредакторы</a></li>
+                    <li><a href="https://htmlbook.ru/html">Справочник по HTML</a></li>
+                </ul>
+                </li>                
+                <li><a href="js1.html">ЛР3</a></li>
+                <li><a href="form.html" class="active">Анкета</a></li>
+                <li><a href="db.php">Таблица из БД</a></li>
+            </ul>        
+        </nav>
+        <hr />
+        <main class="main">
+            <h2>Опрос по теме</h2>
+            <div class="FormConteiner">
+                        <form method="POST" action="cgi-bin/tutor5.py" onsubmit="return formVal(this);">
+                            <H3>Заполните форму и нажмите кнопку</H3>
+                           <table class="FormTable">
+                                <tr>
+                                   <th>Фамилия:</th>
+                                   <td><input class="TextField" name="surname"></td>
+                                </tr>
+                                <tr>
+                                   <th>Имя:</th>
+                                   <td><input class="TextField" name="name"></td>
+                                </tr>
+                                <tr>
+                                   <th>Отчество:</th>
+                                   <td><input class="TextField" name="patron"></td>
+                                </tr>
+                                <tr>
+                                    <th>Группа:</th>
+                                    <td>
+                                        <select name="group">
+                                            <option value="">Выберите группу</option>
+                                            <option value="Z0432K">Z0432K</option>
+                                            <option value="Z0431">Z0431</option>
+                                            <option value="Z0431K">Z0431K</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                               <tr>
+                                   <th>Какая характерстика определяет высоту воспринимаемого звука?</th>
+                                   <td>
+                                    <input type="radio" name="question1" value="Тембр" class="inputChoice">Тембр
+                                    <input type="radio" name="question1" value="Частота" class="inputChoice">Частота колебаний
+                                    <input type="radio" name="question1" value="Амплитуда" class="inputChoice">Амплитуда
+                                   </td>
+                                </tr>
+                               <tr>
+                                   <th>Что из представленного является аудиоредактором?</th> 
+                                   <td>
+                                       <input name="question2" type=checkbox value="Ardour" class="inputChoice">Ardour
+                                       <input name="question2" type=checkbox value="intellij idea" class="inputChoice">intellij idea
+                                       <input name="question2" type=checkbox value="Traverso" class="inputChoice">Traverso
+                                       <input name="question2" type=checkbox value="Photoshop" class="inputChoice">Photoshop
+                                   </td>
+                                </tr>
+                                <tr>
+                                   <th colspan="2"><input class="inputImage" type="image" src="images/confirm.png" alt="Подтвердить"></th>
+                                </tr>
+                            </table>
+                        </form>
+                </div>
+        </main>
+        
+        <footer class="footer">
+            <h2>Контакты</h2>
+            <p >С <a onclick="showAuthor()" id="author">автором</a> сайта можно связаться:</p>
+            <address>
+                По эл. почте:
+                <a href="mailto:vladimir@mail.ru">vladimir@mail.ru</a><br />
+                По телефону: <a href="tel:+78005553535">+7(800)555-35-35</a>
+            </address>
+            <p>
+                Данный сайт создан
+                <time datetime="2023-09-23">23 сентября 2023 года.</time>
+            </p>
+        </footer>
+    </body>
+</html>
