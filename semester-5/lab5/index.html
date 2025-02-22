@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script> <!-- External script -->
+</head>
+<body>
+    <h1>Практика JavaScript</h1>
+    <p>
+        Цель работы – приобретение навыков создания для HTML-документа внешних и внутренних скриптов на JavaScript, 
+        формирование практических навыков использования операторов и создания функций.
+    </p>
+
+    <div id="output"></div>
+
+    <!-- Internal scripts -->
+    <script>
+        // Task 3: Message about HTML and CSS skills
+        const skillsMessage = "Да, у меня появились навыки создания веб-страниц с использованием HTML и CSS!";
+        document.getElementById('output').innerHTML += `<p>${skillsMessage}</p>`;
+
+        // Task 4: Example of type conversion
+        const groupText = "Номер моей группы: ";
+        const groupNumber = 123; // Replace with your group number
+        document.getElementById('output').innerHTML += `<p>${groupText + String(groupNumber)}</p>`;
+
+        // Task 5: Intentional error (uncomment to test in console)
+        // document.getElementById('output').innerHTML += `<p>${groupText + String(groupNumber}</p>`;
+    </script>
+
+    <nav>
+        <a href="part2.html">Перейти к Части 2 и 3</a>
+    </nav>
+</body>
+</html>

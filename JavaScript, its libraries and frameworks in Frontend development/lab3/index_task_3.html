@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Calculator</title>
+    <link rel="stylesheet" href="style_3.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Smart Calculator</h1>
+
+        <div class="calculator">
+            <input type="number" id="num1" placeholder="Enter first number">
+            <select id="operation">
+                <option value="add">Addition (+)</option>
+                <option value="subtract">Subtraction (-)</option>
+                <option value="multiply">Multiplication (×)</option>
+                <option value="divide">Division (÷)</option>
+            </select>
+            <input type="number" id="num2" placeholder="Enter second number">
+            <button onclick="calculate()">Calculate</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script_3.js"></script>
+</body>
+</html>

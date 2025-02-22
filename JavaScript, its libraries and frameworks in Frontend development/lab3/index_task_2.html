@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information System</title>
+    <link rel="stylesheet" href="style_2.css">
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Student Profile Manager</h1>
+        
+        <div class="student-card">
+            <div class="control-panel">
+                <!-- Name Control -->
+                <div class="input-group">
+                    <label for="nameInput">Student Name:</label>
+                    <input type="text" id="nameInput" placeholder="Enter new name">
+                    <button onclick="updateName()">Update Name</button>
+                    <div id="nameMessage" class="message"></div>
+                </div>
+
+                <!-- Age Control -->
+                <div class="input-group">
+                    <label for="ageInput">Student Age:</label>
+                    <input type="number" id="ageInput" placeholder="Enter new age">
+                    <button onclick="updateAge()">Update Age</button>
+                    <div id="ageMessage" class="message"></div>
+                </div>
+
+                <!-- GPA Control -->
+                <div class="input-group">
+                    <label for="gpaInput">Student GPA:</label>
+                    <input type="number" step="0.1" id="gpaInput" placeholder="Enter new GPA">
+                    <button onclick="updateGPA()">Update GPA</button>
+                    <div id="gpaMessage" class="message"></div>
+                </div>
+            </div>
+
+            <!-- Display Section -->
+            <div class="display-section">
+                <h3>Current Student Information:</h3>
+                <div class="student-info" id="nameDisplay"></div>
+                <div class="student-info" id="ageDisplay"></div>
+                <div class="student-info" id="gpaDisplay"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script_2.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 2 and 3 - JavaScript Examples</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Часть 2 и 3: Примеры JavaScript</h1>
+    </header>
+
+    <div id="output"></div>
+
+    <!-- Part 2: Conditional Operator and Unary Plus Operator -->
+    <script>
+        // Conditional operator example
+        const bmi = 22; // Example BMI
+        let recommendation;
+
+        if (bmi < 18.5) {
+            recommendation = "Ваш ИМТ ниже нормы. Рекомендуем увеличить калорийность рациона.";
+        } else if (bmi < 25) {
+            recommendation = "Ваш ИМТ в норме. Продолжайте придерживаться сбалансированного питания.";
+        } else if (bmi < 30) {
+            recommendation = "Ваш ИМТ выше нормы. Попробуйте уменьшить калорийность рациона.";
+        } else {
+            recommendation = "Ваш ИМТ значительно выше нормы. Рекомендуем обратиться к диетологу.";
+        }
+
+        document.getElementById('output').innerHTML += `<p>${recommendation}</p>`;
+
+        // Unary plus operator example
+        const numberString = "42";
+        const convertedNumber = +numberString; // Converts string to number
+        document.getElementById('output').innerHTML += `<p>Число после преобразования: ${convertedNumber}</p>`;
+    </script>
+
+    <!-- Part 3: Functions (Declaration, Expression, Arrow) -->
+    <script>
+        const nevskyLength = 4.5; // Length in kilometers
+        const walkingSpeed = 5; // Speed in km/h
+
+        // Function Declaration
+        function timeToWalkDeclaration(length, speed) {
+            const time = (length / speed) * 60;
+            return `Время для прохождения Невского проспекта: ${time.toFixed(2)} минут.`;
+        }
+        document.getElementById('output').innerHTML += `<p>${timeToWalkDeclaration(nevskyLength, walkingSpeed)}</p>`;
+
+        // Function Expression
+        const timeToWalkExpression = function(length, speed) {
+            const time = (length / speed) * 60;
+            return `Время для прохождения Невского проспекта: ${time.toFixed(2)} минут.`;
+        };
+        document.getElementById('output').innerHTML += `<p>${timeToWalkExpression(nevskyLength, walkingSpeed)}</p>`;
+
+        // Arrow Function
+        const timeToWalkArrow = (length, speed) => {
+            const time = (length / speed) * 60;
+            return `Время для прохождения Невского проспекта: ${time.toFixed(2)} минут.`;
+        };
+        document.getElementById('output').innerHTML += `<p>${timeToWalkArrow(nevskyLength, walkingSpeed)}</p>`;
+    </script>
+
+    <nav>
+        <a href="index.html">Вернуться к Части 1</a>
+    </nav>
+</body>
+</html>

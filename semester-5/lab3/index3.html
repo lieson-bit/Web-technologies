@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Layout with Text Surrounding Image</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Increase block height */
+        .card-body {
+            min-height: 550px; /* Adjust as needed to fill the screen */
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Navigation Links -->
+        <div class="row bg-primary text-white text-center py-2">
+            <div class="col"><a href="https://google.com" class="text-white text-uppercase font-weight-bold">Задать вопрос нам</a></div>
+            <div class="col"><a href="https://ufc.com" class="text-white text-uppercase font-weight-bold">Наши противники</a></div>
+            <div class="col"><a href="not_created" class="text-white text-uppercase font-weight-bold">Здесь мы побеждали</a></div>
+            <div class="col"><a href="https://russia.fandom.com/ru/wiki/ГазМяс" class="text-white text-uppercase font-weight-bold">Наши игроки</a></div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="row justify-content-center my-4">
+            <!-- Left Card -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-primary">Наши звезды</h5>
+                        <p class="card-text" id="left-text"></p>
+                        <a href="https://example.com/left-text" class="btn btn-link text-primary">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Card with Image at Top-Right -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary text-center">Легенды футбола</h5>
+                        <!-- Image positioned to the top-right corner with text surrounding it -->
+                        <img src="images/philosophy.jpg" alt="Your Image" class="img-fluid float-left ml-3 mb-3" style="max-width: 150px;">
+                        <p class="card-text" id="center-text"></p>
+                        <a href="https://example.com/center" class="btn btn-link text-primary">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Card -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-primary">Наши фанатки</h5>
+                        <p class="card-text" id="right-text">Loading content...</p>
+                        <a href="https://example.com/right" class="btn btn-link text-primary">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="row bg-primary text-white text-center py-3">
+            <div class="col">
+                <p class="mb-0">15-420-96</p>
+            </div>
+            <div class="col">
+                <p class="mb-0">Футбольное поле команды "ГазМяс"</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

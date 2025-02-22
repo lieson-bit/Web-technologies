@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Calculator</title>
+    <link rel="stylesheet" href="style_1.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Shape Calculator</h1>
+
+        <div class="shape-form">
+            <h2>Rectangle</h2>
+            <label>Width: <input type="number" id="rect-width" /></label>
+            <label>Height: <input type="number" id="rect-height" /></label>
+            <button onclick="calculateRectangle()">Calculate</button>
+            <div id="rect-result"></div>
+        </div>
+
+        <div class="shape-form">
+            <h2>Circle</h2>
+            <label>Radius: <input type="number" id="circle-radius" /></label>
+            <button onclick="calculateCircle()">Calculate</button>
+            <div id="circle-result"></div>
+        </div>
+    </div>
+
+    <script src="script_1.js"></script>
+</body>
+</html>

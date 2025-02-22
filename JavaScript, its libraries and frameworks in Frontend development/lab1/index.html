@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Selection for Employment</title>
+    <!-- Подключение CSS файла для стилизации страницы -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Контейнер для основного контента -->
+    <div class="container">
+        <h2 class="main-title">Выбор студентов для трудоустройства</h2>
+
+        <!-- Кнопка для запуска выбора студентов -->
+        <button class="select-button" onclick="selectStudents()">Выбрать лучших студентов</button>
+
+        <!-- Контейнер для вывода результата -->
+        <div id="result" class="result-container"></div>
+    </div>
+
+    <!-- Модальное окно для отображения выбранных студентов -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-title">Выбранные студенты</h3>
+            <!-- Список студентов, который будет заполняться динамически -->
+            <ul id="selectedStudentsList" class="student-list"></ul>
+            <!-- Кнопка для закрытия модального окна -->
+            <button class="close-button" onclick="closeModal()">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Подключение JavaScript файла для логики работы страницы -->
+    <script src="script.js"></script>
+</body>
+</html>
