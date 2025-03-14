@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <!-- Использованы средства HTML5 --> 
+<head>
+    <!-- Расширенное использование тега meta для указания кодировки и адаптивности -->
+    <meta
+        charset="UTF-8"
+        name="viewport" 
+        content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <!-- Подключение css-->
+ <link rel="stylesheet" href="styles.css">
+ 
+ <!-- box icons -->
+ <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+ <style>
+    /* Global CSS */
+    .highlight {
+        background-color: #e0f7fa; /* Light blue background */
+        border-color: #3498db; /* Blue border */
+    }
+    .author-button {
+        background-color: transparent !important;
+        color: blue !important;
+        font-weight: bold !important;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+    }
+</style>   
+    
+</head>
+<body>
+     <!-- google translator-->
+     <div id="google_translate_element"></div>
+    <!-- Шапка сайта с названием и логотипом -->
+    <header>
+        <a href="#" class="logo-container">
+            <img src="images/logo.png" alt="Logo Image" class="logo-image">
+            <span class="logo-text">Промышленные роботы</span>
+        </a> 
+        <p>Эволюция с 1990-х годов до наших дней</p>
+    </header>
+
+    <!-- Горизонтальная линия для разделения контента -->
+    
+    <!-- Навигационная панель с ссылками на разделы сайта -->
+    <nav align="center" >
+        <a href="index.html">Главная</a>
+        <a href="second.html">Промышленный робот</a>
+        <a href="source.html">Использованные источники</a>
+        <a href="#">лр3</a>
+        <a href="#">анкета</a>
+        <a href="#">таблица из БД</a>
+    </nav>
+
+    <!-- Основной контент страницы -->
+    <main>
+        <a href="#applications">Применения</a>
+        <a href="#table-caption">Таблица</a>
+       <!-- Секция с видео и часами -->
+<section id="video-container">
+    <div id="video">
+        <h2>Видео: Эволюция промышленных роботов</h2>
+        <iframe width="50%" height="400" 
+            src="https://www.youtube.com/embed/EZQLMLux_FI" 
+            title="Видео про эволюцию промышленных роботов" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+        <p>Смотрите видео о развитии промышленных роботов с 1990-х годов по настоящее время.</p>
+    </div>
+
+    <!-- Часы -->
+    <div id="clock-container">
+        <h3>Текущее время:</h3>
+        <div id="clock-display" name="clock-display">--:--</div>
+        <button id="clock-button" name="clock-button">Показать секунды</button>
+    </div>
+</section>
+
+        
+        <!-- Секция с обзором промышленных роботов -->
+        <section id="overview">
+            <h2>Обзор промышленных роботов</h2>
+            <p>Промышленные роботы претерпели значительные изменения с 1990-х годов. В те годы роботы в основном использовались для выполнения повторяющихся задач, таких как сварка и сборка на заводах по производству автомобилей. С течением времени достижения в области искусственного интеллекта (ИИ), машинного обучения и робототехники сделали промышленных роботов более универсальными, точными и способными выполнять сложные задачи.</p>
+            <br>
+        </section>
+
+        <!-- Секция с историей промышленных роботов -->
+        <section id="history">
+            <h2>История промышленных роботов с 1990-х годов до наших дней</h2>
+            <p>1990-е годы ознаменовали начало широкого внедрения промышленных роботов. В этот период роботы обычно программировались на выполнение фиксированных задач и использовались в основном в производственных отраслях. Однако к началу 2000-х годов развитие более совершенных датчиков и контроллеров позволило роботам взаимодействовать с окружающей средой, делая их более гибкими и адаптивными. В 2010-х годах достижения в области ИИ и машинного обучения позволили роботам стать еще более автономными, способными обучаться на основе окружающей среды и принимать решения в реальном времени.</p>
+            <p>Сегодня промышленные роботы используются в самых разных отраслях, от автомобилестроения до сборки электроники. Интеграция роботов с Интернетом вещей (IoT) и облачными вычислениями продолжает революционизировать эту область, позволяя создавать более collaborative robots (коботы), которые работают вместе с людьми.</p>
+            <br>
+            <!-- Buttons for modifying <p> elements in the history section -->
+                <button name="change-color-btn" 
+                style="background: linear-gradient(to right, #ff7e5f, #feb47b); 
+                       border: none; 
+                       color: white; 
+                       padding: 12px 20px; 
+                       font-size: 16px; 
+                       font-weight: bold; 
+                       border-radius: 8px; 
+                       cursor: pointer; 
+                       transition: transform 0.2s, box-shadow 0.2s;">
+                Изменить цвет
+            </button>
+            
+            <button name="change-size-btn" 
+                style="background: linear-gradient(to right, #56CCF2, #2F80ED); 
+                       border: none; 
+                       color: white; 
+                       padding: 12px 20px; 
+                       font-size: 16px; 
+                       font-weight: bold; 
+                       border-radius: 8px; 
+                       cursor: pointer; 
+                       transition: transform 0.2s, box-shadow 0.2s;">
+                Изменить размер
+            </button>
+
+        </section>
+        
+
+        <article class="highlight" style="background-color: #f9ebdf; border-color: #e67e22;">
+            <h1>Будущее Промышленных Роботов</h1>
+            <p>
+                В будущем промышленные роботы будут не только выполнять задачи на производственных линиях, но и станут неотъемлемой частью концепции 
+                Индустрии 4.0, которая включает в себя интернет вещей (IoT), большие данные и киберфизические системы. 
+                Роботы будут связаны между собой и с другими устройствами, что позволит им работать в единой экосистеме. 
+                Благодаря этому будет возможна полная автоматизация процессов, мониторинг и управление в реальном времени, 
+                а также использование данных для принятия решений и оптимизации производства. 
+                Индустрия 4.0 откроет новые горизонты для промышленности, с возможностью не только повысить продуктивность, но и улучшить качество 
+                продукции, снизить затраты и сделать производство более гибким.
+            </p>
+        
+            <aside>
+                <h3>Знали ли Вы?</h3>
+                <p>
+                    Согласно прогнозам, к 2030 году до 50% всех производственных операций будут автоматизированы с помощью роботов, 
+                    что позволит значительно повысить эффективность и снизить затраты на производство.
+                </p>
+            </aside>
+        </article>
+        
+
+        <!-- Секция с примерами применения промышленных роботов -->
+        <section id="applications">
+            <h2>Применение промышленных роботов</h2>
+            <p>Промышленные роботы используются в различных областях в разных отраслях. Ниже приведены некоторые из основных применений:</p>
+            <ol>
+                <li>Производство:
+                    <ol>
+                        <li>Работа на сборочной линии</li>
+                        <li>Сварка и покраска</li>
+                        <li>Упаковка и транспортировка материалов</li>
+                    </ol>
+                </li>
+                <li>Здравоохранение:
+                    <ol>
+                        <li>Роботизированная хирургия</li>
+                        <li>Сборка медицинских устройств</li>
+                    </ol>
+                </li>
+                <li>Сельское хозяйство:
+                    <ul>
+                        <li>Точное земледелие</li>
+                        <li>Автоматизированный сбор урожая</li>
+                    </ul>
+                </li>
+            </ol>
+
+            
+            <!-- Таблица с объединенными строками -->
+            <table border="1" width="60%" align="center">
+                <caption id="table-caption"><h2>Типы роботов в различных отраслях</h2></caption>
+                <thead>
+                    <tr>
+                        <th>Отрасль</th>
+                        <th>Тип робота</th>
+                        <th>Основные применения</th>
+                    </tr>
+                </thead>
+                <tbody> <!-- Ensure tbody exists -->
+                    <tr>
+                        <td rowspan="2">Производство</td>
+                        <td>Сочлененные роботы</td>
+                        <td>Сборка, сварка и покраска</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">SCARA-роботы</td>
+                        <td>Транспортировка материалов</td>
+                    </tr>
+                    <tr>
+                        <td>Здравоохранение</td>
+                        <td>Роботизированные хирургические системы</td>
+                    </tr>
+                    <tr>
+                        <td>Сельское хозяйство</td>
+                        <td>Автономные роботы для сбора урожая</td>
+                        <td>Сбор урожая</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Input Section for Data -->
+            <div id="input-section">
+                <h3>Добавить данные о роботе:</h3>
+                <input type="text" name="industry" placeholder="Отрасль">
+                <input type="text" name="robot-type" placeholder="Тип робота">
+                <input type="text" name="applications" placeholder="Основные применения">
+                <button name="add-row-btn">Добавить строку</button>
+                <button name="erase-row-btn">Удалить добавленные строки</button>
+            </div>
+            
+            <!-- External delete button -->
+            
+            <!-- CSS for Styling the Input Section -->
+            <style>
+                #input-section {
+                    margin: 20px 0;
+                    display: flex;
+                    gap: 10px;
+                    justify-content: center;
+                    align-items: center;
+                }
+                #input-section input {
+                    padding: 8px;
+                    font-size: 14px;
+                    width: 200px;
+                }
+                #input-section button {
+                    padding: 10px 20px;
+                    font-size: 14px;
+                    cursor: pointer;
+                    background-color: #3498db;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    transition: background-color 0.3s ease;
+                }
+                #input-section button:hover {
+                    background-color: #2980b9;
+                }
+            </style>
+            
+          
+            <br>
+        </section>
+        
+        <!-- Секция с изображениями промышленных роботов -->
+        <section>
+            <h2 align="center">Изображения промышленных роботов</h2>
+            <!-- Два ряда изображений, одно изображение занимает два ряда -->
+            <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+                <picture style="flex: 2 1 5%; height: 400px;">
+                    <img src="images/robot4.png" alt="Робот 4" style="height: 105%; width: 100%; object-fit: cover;">
+                    
+                </picture>
+
+                <div style="flex: 1 1 48%; height: 200px;">
+                    <picture style="height: 100%;">
+                        <img src="images/robot3.png" alt="Робот 2" style="height: 100%; width: 100%; object-fit: cover;">   
+                    </picture>
+                    <hr/>
+                    <picture style="height: 100%; margin-top: 10px;">
+                        <img src="images/robot.png" alt="Робот 3" style="height: 100%; width: 100%; object-fit: cover;"> 
+                         
+                    </picture>
+                    <figcaption>Промышленные роботы</figcaption> 
+                </div> 
+            </div>
+            <hr/>
+        </section>
+    </main>
+    </div></div>
+    <!-- Подвал сайта с контактной информацией -->
+    <footer>
+        <table width="100%" border="0">
+            <tr>
+                <td>
+                    <address>
+                        <h2>Контакты</h2>
+                        <p>С 
+                            <button class="author-button" name="author-info">АВТОРОМ</button> сайта можно связаться:</p>
+                        <address>
+                            По эл. почте: <a href="mailto:lieson.mwale22.ru">lieson.mwale22@gmail.com</a><br />
+                            По телефону: <a href="tel:+78005553535">+7(800)555-35-35</a>
+                        </address>
+                        <p>Данный сайт создан 14 февраля 2025 года</p>
+                    </address>
+                </td>
+            </tr>
+            <tr>
+                <td>&copy; 2025 Команда "История робототехники"</td>
+            </tr>
+        </table>
+    </footer>
+</body>
+<script src="script.js" defer></script>
+</html>

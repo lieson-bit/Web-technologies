@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактор JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .editor-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .editor, .result {
+            flex: 1;
+            margin: 50px;
+        }
+        textarea {
+            width: 100%;
+            height: 100%;
+            resize: none;
+        }
+        .buttons {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Редактор JavaScript</h2>
+
+    <div class="editor-container">
+        <!-- Code Section -->
+        <div class="editor">
+            <label>Введите скрипт:</label><br/>
+            <textarea id="mycode" rows="30" cols="50"></textarea>
+        </div>
+
+        <!-- Result Section (Now on the right side) -->
+        <div class="result">
+            <label>Результат:</label><br/>
+            <textarea id="myrezult" rows="30" cols="50" readonly></textarea>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button onclick="document.getElementById('myrezult').value = eval(document.getElementById('mycode').value)">
+            Выполнить
+        </button>
+        <button onclick="document.getElementById('mycode').value=''; document.getElementById('myrezult').value=''">
+            Очистить
+        </button>
+    </div>
+
+</body>
+</html>

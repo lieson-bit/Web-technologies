@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Canvas Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        canvas {
+            border: 1px dashed black;
+        }
+        textarea {
+            width: 300%;
+            height: 500px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JavaScript Canvas Editor</h2>
+
+    <div class="container">
+        <div>
+            <label>Enter JavaScript Code:</label><br>
+            <textarea id="mycode"></textarea><br>
+            <button onclick="executeCode()">Run Code</button>
+            <button onclick="clearCanvas()">Clear Canvas</button>
+        </div>
+        <div>
+            <label>Canvas Output:</label><br>
+            <canvas id="drawingCanvas" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <script>
+        function executeCode() {
+            try {
+                eval(document.getElementById("mycode").value);
+            } catch (error) {
+                alert("Error in your script: " + error.message);
+            }
+        }
+
+        function clearCanvas() {
+            let canvas = document.getElementById("drawingCanvas");
+            let ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    </script>
+
+</body>
+</html>
