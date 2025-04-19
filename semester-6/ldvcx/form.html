@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета: Промышленные роботы</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function formVal(form) {
+            // Validate surname
+            if (form.surname.value.length < 4 || form.surname.value.length > 30) {
+                alert("Фамилия должна содержать от 4 до 30 символов.");
+                form.surname.focus();
+                return false;
+            }
+            if (!form.surname.value.match(/^[a-zA-Zа-яА-Я]+$/i)) {
+                alert("Фамилия должна содержать только буквы.");
+                form.surname.focus();
+                return false;
+            }
+
+            // Validate name
+            if (form.name.value.length < 4 || form.name.value.length > 30) {
+                alert("Имя должно содержать от 4 до 30 символов.");
+                form.name.focus();
+                return false;
+            }
+            if (!form.name.value.match(/^[a-zA-Zа-яА-Я]+$/i)) {
+                alert("Имя должно содержать только буквы.");
+                form.name.focus();
+                return false;
+            }
+
+            // Validate patronymic
+            if (form.patron.value.length < 4 || form.patron.value.length > 30) {
+                alert("Отчество должно содержать от 4 до 30 символов.");
+                form.patron.focus();
+                return false;
+            }
+            if (!form.patron.value.match(/^[a-zA-Zа-яА-Я]+$/i)) {
+                alert("Отчество должно содержать только буквы.");
+                form.patron.focus();
+                return false;
+            }
+
+            // Validate group selection
+            if (form.group.selectedIndex == 0) {
+                alert("Пожалуйста, выберите вашу группу.");
+                return false;
+            }
+
+            // Validate radio buttons
+            if (!form.question1[0].checked && !form.question1[1].checked && !form.question1[2].checked) {
+                alert("Пожалуйста, выберите вариант ответа.");
+                return false;
+            }
+
+            // Validate checkboxes
+            if (!form.question2[0].checked && !form.question2[1].checked && !form.question2[2].checked && !form.question2[3].checked) {
+                alert("Пожалуйста, выберите хотя бы один вариант ответа.");
+                return false;
+            }
+
+            // Validate email
+            if (!form.email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                alert("Пожалуйста, введите корректный email.");
+                form.email.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <!-- Шапка сайта с названием и логотипом -->
+    <header>
+        <a href="#" class="logo-container">
+            <img src="images/logo.png" alt="Logo Image" class="logo-image">
+            <span class="logo-text">Промышленные роботы</span>
+        </a> 
+        <p>Анкета</p>
+    </header>
+
+    <!-- Навигационная панель с ссылками на разделы сайта -->
+    <nav align="center" >
+        <a href="index.html">Главная</a>
+        <a href="second.html">Промышленный робот</a>
+        <a href="source.html">Использованные источники</a>
+        <a href="#">лр3</a>
+        <a href="form.html">анкета</a>
+        <a href="#">таблица из БД</a>
+    </nav>
+    <main>
+        <h2>Заполните анкету</h2>
+        <form method="POST" action="http://localhost:8081/cgi-bin/process_form.py" enctype="multipart/form-data" onsubmit="return formVal(this);">
+            <table>
+                <tr>
+                    <th>Фамилия:</th>
+                    <td><input type="text" name="surname" placeholder="Введите фамилию"></td>
+                </tr>
+                <tr>
+                    <th>Имя:</th>
+                    <td><input type="text" name="name" placeholder="Введите имя"></td>
+                </tr>
+                <tr>
+                    <th>Отчество:</th>
+                    <td><input type="text" name="patron" placeholder="Введите отчество"></td>
+                </tr>
+                <tr>
+                    <th>Группа:</th>
+                    <td>
+                        <select name="group">
+                            <option value="">Выберите группу</option>
+                            <option value="Z0432K">4236</option>
+                            <option value="Z0431">Z0431</option>
+                            <option value="Z0431K">Z0431K</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Какой язык программирования вы предпочитаете?</th>
+                    <td>
+                        <input type="radio" name="question1" value="Python"> Python
+                        <input type="radio" name="question1" value="Java"> Java
+                        <input type="radio" name="question1" value="C++"> C++
+                    </td>
+                </tr>
+                <tr>
+                    <th>Какие технологии вы используете?</th>
+                    <td>
+                        <input type="checkbox" name="question2" value="IoT"> IoT
+                        <input type="checkbox" name="question2" value="AI"> AI
+                        <input type="checkbox" name="question2" value="Robotics"> Robotics
+                        <input type="checkbox" name="question2" value="Automation"> Automation
+                    </td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td><input type="email" name="email" placeholder="Введите email"></td>
+                </tr>
+                <tr>
+                    <th>Загрузите файл:</th>
+                    <td><input type="file" name="file"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Отправить"></td>
+                </tr>
+            </table>
+        </form>
+    </main>
+    <!-- Подвал сайта с контактной информацией -->
+    <footer>
+        <table width="100%" border="0">
+            <tr>
+                <td>
+                    <address>
+                        <h2>Контакты</h2>
+                        <p>С 
+                            <button class="author-button" name="author-info">АВТОРОМ</button> сайта можно связаться:</p>
+                        <address>
+                            По эл. почте: <a href="mailto:lieson.mwale22.ru">lieson.mwale22@gmail.com</a><br />
+                            По телефону: <a href="tel:+78005553535">+7(800)555-35-35</a>
+                        </address>
+                        <p>Данный сайт создан 14 февраля 2025 года</p>
+                    </address>
+                </td>
+            </tr>
+            <tr>
+                <td>&copy; 2025 Команда "История робототехники"</td>
+            </tr>
+        </table>
+    </footer>
+</body>
+<script src="script.js" defer></script>
+</html>
+

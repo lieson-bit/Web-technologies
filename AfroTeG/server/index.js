@@ -10,6 +10,9 @@ require("./middlewares/authMiddleware"); // Google OAuth setup
 
 const authRoutes = require("./routes/authRoutes");
 const profileRoutes = require("./routes/profileRoutes"); // Add profile routes
+const portfolioRoutes = require("./routes/portfolioRoutes"); 
+const jobRoutes = require("./routes/jobRoutes"); // Import job routes
+const competitionRoutes = require("./routes/competitionRoutes");
 
 const app = express();
 
@@ -28,16 +31,18 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // Routes
 app.use("/api/auth", authRoutes); // Authentication routes
 app.use("/api/profile", profileRoutes); // Profile routes
+app.use("/api/portfolio", portfolioRoutes);
+app.use("/api/jobs", jobRoutes);
+app.use("/api/competitions", competitionRoutes);
 
 // Connect to MongoDB (Local)
 mongoose
   .connect("mongodb://localhost:27017/freelanceconn", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
     serverSelectionTimeoutMS: 5000, // Adjust timeout for local MongoDB
   })
   .then(() => console.log("✅ Connected to the local MongoDB database"))
   .catch((err) => console.error("❌ Local database connection error:", err));
+
 
 // Default Route
 app.get("/", (req, res) => {

@@ -12,5 +12,7 @@ router.put("/", protect, profileController.updateProfile);
 
 // Upload profile picture
 router.post("/upload-profile-pic", protect, uploadMiddleware.single("file"), profileController.uploadProfilePic);
+router.get("/:id", profileController.getUserById);
+
 
 module.exports = router;

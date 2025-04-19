@@ -1,0 +1,569 @@
+/* General Styles */
+
+/* Подключение шрифта Poppins с Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Общие стили для всех элементов */
+* {
+    box-sizing: border-box; /* Учитываем padding и border в размерах элемента */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    border: none; /* Убираем границы */
+    outline: none; /* Убираем контур при фокусе */
+    scroll-behavior: smooth; /* Плавная прокрутка */
+    font-family: 'Poppins', sans-serif; /* Шрифт Poppins */
+}
+
+/* Определение CSS-переменных */
+:root {
+    --bg-color: transparent; /* Прозрачный цвет фона */
+    --text-color: #333; /* Основной цвет текста */
+    --main-color: #754ef9; /* Основной цвет (переопределен ниже) */
+    --main-color: #00aeff; /* Основной цвет (синий) */
+    --second-bg-color: #112e42; /* Вторичный цвет фона */
+    --second-main-color: #00abf0; /* Вторичный основной цвет */
+    --white-color: #fdfdfd; /* Белый цвет */
+    --social-color: #f3eded; /* Цвет для социальных элементов */
+    --facebook-color: #0910c6; /* Цвет Facebook */
+    --orange-color: #d58a13; /* Оранжевый цвет */
+    --shadow-color: rgba(201, 189, 144, 0.2); /* Цвет тени */
+    --light_mode-color: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%); /* Градиент для светлого режима */
+}
+
+/* Внешний отступ, граница, внутренний отступ */
+#applications {
+    margin: 20px; /* Пространство снаружи элемента */
+    border: 2px solid #3498db; /* Видимая граница */
+    padding: 15px; /* Пространство внутри элемента */
+    background-color: #f9f9f9; /* Светло-серый фон */
+}
+
+/* Скругленные углы */
+#applications {
+    border-radius: 10px; /* Скругленные углы */
+}
+
+/* Настройки для HTML */
+html {
+    font-size: 100%; /* Размер шрифта по умолчанию */
+    overflow-x: hidden; /* Скрываем горизонтальную прокрутку */
+}
+
+/* Стили для body */
+body {
+    font-family: 'Arial', sans-serif; /* Шрифт Arial */
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    background-color: #f4f4f4; /* Цвет фона (шестнадцатеричный) */
+    color: #333; /* Цвет текста */
+    line-height: 1.6; /* Межстрочный интервал */
+}
+
+/* Стили для заголовков (селектор по тегу) */
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50; /* Цвет текста */
+}
+
+/* Комбинатор соседних элементов (селектор +) */
+h2 + p {
+    font-style: italic; /* Курсив для параграфов, следующих сразу за h2 */
+    color: #666; /* Серый цвет текста */
+}
+
+/* Стили для ссылок */
+a {
+    color: #3498db; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+/* Стили для непосещенных ссылок */
+a:link {
+    color: #0077cc; /* Темно-синий цвет */
+}
+
+/* Стили для ссылок при наведении */
+a:hover {
+    color: #2980b9; /* Цвет при наведении */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+/* Стили для посещенных ссылок */
+a:visited {
+    font-size: 3.5rem; /* Размер шрифта */
+    color: #f4f4f7; /* Фиолетовый цвет */
+}
+
+/* Стили для активных ссылок (при нажатии) */
+a:active {
+    color: red; /* Красный цвет */
+}
+
+/* Стили для шапки */
+.header {
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0; /* Привязка к верху */
+    left: 0; /* Привязка к левому краю */
+    width: 100%; /* Ширина 100% */
+    padding: 2rem 7%; /* Внутренние отступы */
+    background: transparent; /* Прозрачный фон */
+    display: flex; /* Flex-контейнер */
+    align-items: center; /* Выравнивание по центру */
+    z-index: 100; /* z-index для наложения */
+    transition: .5s; /* Плавный переход */
+}
+
+/* Градиентный фон для шапки */
+header {
+    background-image: linear-gradient(to right, #3498db, #9b59b6); /* Градиент от синего к фиолетовому */
+    padding: 10px; /* Внутренние отступы */
+    color: white; /* Белый текст */
+}
+
+/* Градиентный фон для шапки (альтернативный селектор) */
+#header {
+    background-image: linear-gradient(to right, #3498db, #9b59b6); /* Градиент от синего к фиолетовому */
+    padding: 10px; /* Внутренние отступы */
+    color: white; /* Белый текст */
+}
+
+/* Стили для фиксированной шапки */
+.header.sticky {
+    background-color: var(--bg-color); /* Цвет фона */
+    box-shadow: 0 .1rem var(--shadow-color); /* Тень */
+}
+
+/* Стили для контейнера логотипа */
+.logo-container {
+    display: flex; /* Flex-контейнер */
+    align-items: center; /* Выравнивание по центру */
+    gap: 10px; /* Расстояние между элементами */
+    font-size: 2.5rem; /* Размер шрифта */
+    color: transparent; /* Прозрачный цвет текста */
+    -webkit-text-stroke: .7px var(--second-bg-color); /* Обводка текста */
+    font-weight: 700; /* Жирный шрифт */
+    cursor: default; /* Курсор по умолчанию */
+    margin-right: auto; /* Отступ справа */
+    position: relative; /* Относительное позиционирование */
+}
+
+/* Эффект при наведении на текст логотипа */
+.logo-container:hover .logo-text {
+    color: var(--second-bg-color); /* Цвет текста при наведении */
+    transition: 0.5s; /* Плавный переход */
+}
+
+/* Стили для изображения логотипа */
+.logo-image {
+    width: 60px; /* Ширина изображения */
+    height: auto; /* Автоматическая высота */
+}
+
+/* Стили для текста логотипа */
+.logo-text {
+    font-size: 2.5rem; /* Размер шрифта */
+    color: transparent; /* Прозрачный цвет текста */
+    -webkit-text-stroke: .7px var(--second-bg-color); /* Обводка текста */
+    transition: color 0.5s; /* Плавный переход */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+/* Стили для параграфа в шапке */
+header p {
+    margin: 5px 0 0; /* Внешние отступы */
+    font-size: 1.2em; /* Размер шрифта */
+}
+
+/* Стили для навигации */
+nav {
+    background-color: #34495e; /* Цвет фона */
+    padding: 10px 0; /* Внутренние отступы */
+    text-align: center; /* Выравнивание по центру */
+}
+
+/* Стили для ссылок в навигации */
+nav a {
+    color: #ecf0f1; /* Цвет текста */
+    margin: 0 15px; /* Внешние отступы */
+    font-size: 1.1em; /* Размер шрифта */
+}
+
+/* Эффект при наведении на ссылки в навигации */
+nav a:hover {
+    color: #edf1f4; /* Цвет текста при наведении */
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+/* Стили для основного контента */
+main {
+    padding: 20px; /* Внутренние отступы */
+    max-width: 1200px; /* Максимальная ширина */
+    margin: 0 auto; /* Центрирование */
+}
+
+/* Альтернативный селектор для основного контента */
+#main {
+    padding: 20px; /* Внутренние отступы */
+    max-width: 1200px; /* Максимальная ширина */
+    margin: 0 auto; /* Центрирование */
+}
+
+/* Стили для секций */
+section {
+    margin-bottom: 40px; /* Внешний отступ снизу */
+}
+
+/* Альтернативный селектор для секций */
+#section {
+    margin-bottom: 40px; /* Внешний отступ снизу */
+}
+
+/* Стили для заголовков секций */
+section h2 {
+    border-bottom: 2px solid #3498db; /* Граница снизу */
+    padding-bottom: 10px; /* Внутренний отступ снизу */
+    margin-bottom: 20px; /* Внешний отступ снизу */
+}
+
+#video-container {
+    display: flex; 
+    justify-content: space-between; /* Creates space between video and clock */
+    align-items: center; /* Aligns both items */
+    width: 100%; 
+    gap: 20px; /* Adds spacing between elements */
+}
+
+#video {
+    width: 70%; /* Video takes up most of the space */
+}
+
+#clock-container {
+    width: 25%; /* Adjust width for a good fit */
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#clock-display {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 10px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    background: white;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#clock-button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    background: #3498db;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#clock-button:hover {
+    background: #2980b9;
+}
+
+
+/* Альтернативный селектор для заголовков секций */
+#section h2 {
+    border-bottom: 2px solid #3498db; /* Граница снизу */
+    padding-bottom: 10px; /* Внутренний отступ снизу */
+    margin-bottom: 20px; /* Внешний отступ снизу */
+}
+
+/* Стили для выделенного блока (селектор по классу) */
+.highlight {
+    background-color: #fff; /* Белый фон */
+    padding: 20px; /* Внутренние отступы */
+    border-radius: 8px; /* Скругленные углы */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
+    margin-bottom: 20px; /* Внешний отступ снизу */
+}
+
+/* Псевдоэлементы для первой буквы и первой строки */
+article p::first-letter {
+    font-size: 200%; /* Увеличенный размер первой буквы */
+    color: #3498db; /* Синий цвет */
+}
+
+article p::first-line {
+    font-weight: bold; /* Жирная первая строка */
+}
+
+/* Стили для боковой панели */
+aside {
+    background-color: #ecf0f1; /* Цвет фона */
+    padding: 15px; /* Внутренние отступы */
+    border-left: 5px solid #3498db; /* Граница слева */
+    margin-top: 20px; /* Внешний отступ сверху */
+}
+
+/* Стили для упорядоченного списка (ol) */
+ol {
+    list-style-type: none; /* Убираем стандартную нумерацию */
+    counter-reset: section; /* Сбрасываем счетчик */
+    padding-left: 20px; /* Внутренний отступ слева */
+}
+
+/* Стили для элементов упорядоченного списка */
+ol > li {
+    counter-increment: section; /* Увеличиваем счетчик */
+    margin-bottom: 10px; /* Внешний отступ снизу */
+    padding: 10px; /* Внутренние отступы */
+    border-left: 3px solid transparent; /* Граница слева */
+    transition: all 0.3s ease; /* Плавный переход */
+}
+
+/* Псевдоэлемент для нумерации */
+ol > li::before {
+    content: counters(section, ".") ". "; /* Вложенная нумерация */
+    font-weight: bold; /* Жирный шрифт */
+    color: #3498db; /* Синий цвет */
+    margin-right: 10px; /* Внешний отступ справа */
+    transition: color 0.3s ease; /* Плавный переход */
+}
+
+/* Эффект при наведении на элементы упорядоченного списка */
+ol > li:hover {
+    background-color: #e0f7fa; /* Цвет фона при наведении */
+    border-left: 3px solid #3498db; /* Граница слева при наведении */
+}
+
+/* Эффект при наведении на нумерацию */
+ol > li:hover::before {
+    color: #e74c3c; /* Красный цвет при наведении */
+}
+
+/* Стили для неупорядоченного списка (ul) */
+ul {
+    list-style-type: none; /* Убираем стандартные маркеры */
+    padding-left: 40px; /* Внутренний отступ слева */
+}
+
+/* Стили для элементов неупорядоченного списка */
+ul > li {
+    position: relative; /* Относительное позиционирование */
+    margin-bottom: 5px; /* Внешний отступ снизу */
+    padding: 8px; /* Внутренние отступы */
+    border-left: 3px solid transparent; /* Граница слева */
+    transition: all 0.3s ease; /* Плавный переход */
+}
+
+/* Псевдоэлемент для маркеров */
+ul > li::before {
+    content: "➤"; /* Кастомный маркер */
+    color: #e74c3c; /* Красный цвет */
+    font-size: 1.2em; /* Размер маркера */
+    position: absolute; /* Абсолютное позиционирование */
+    left: -20px; /* Позиция слева */
+    top: 0; /* Позиция сверху */
+    transition: color 0.3s ease; /* Плавный переход */
+}
+
+/* Эффект при наведении на элементы неупорядоченного списка */
+ul > li:hover {
+    background-color: #f9ebdf; /* Цвет фона при наведении */
+    border-left: 3px solid #e67e22; /* Граница слева при наведении */
+}
+
+/* Эффект при наведении на маркеры */
+ul > li:hover::before {
+    color: #3498db; /* Синий цвет при наведении */
+}
+
+/* Стили для таблиц */
+#table-caption {
+    caption-side: top; /* Позиция заголовка таблицы */
+    font-weight: bold; /* Жирный шрифт */
+    margin-bottom: 10px; /* Внешний отступ снизу */
+}
+
+/* Стили для заголовка таблицы */
+#table-title {
+    color: black; /* Черный цвет текста */
+}
+
+/* Стили для таблицы */
+table {
+    border-radius: 10px; /* Скругленные углы */
+    overflow: hidden; /* Скрываем выходящие за границы элементы */
+    background-color: #436780; 
+    color: white; /* Белый текст */
+    margin: 20px auto; /* Внешние отступы */
+    width: 50%; /* Ширина таблицы */
+    border-collapse: collapse; /* Слияние границ */
+}
+
+/* Стили для ячеек таблицы */
+table, tr, th, td {
+    border-radius: 10px; /* Скругленные углы */
+    border: 2px solid #3498db; /* Граница */
+    padding: 12px; /* Внутренние отступы */
+    text-align: center; /* Выравнивание по центру */
+}
+
+/* Стили для заголовков таблицы */
+th {
+    border: 2px solid #3498db; /* Граница */
+    background-color: #3498db; /* Цвет фона */
+    overflow: hidden; /* Скрываем выходящие за границы элементы */
+    color: #fff; /* Белый текст */
+}
+
+/* Эффект при наведении на строки таблицы */
+tr, td:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный белый фон */
+}
+
+/* Фильтр для изображений */
+img[alt="Робот 4"] {
+    filter: grayscale(100%) brightness(90%); /* Черно-белый фильтр и яркость */
+}
+
+/* Стили для изображений */
+img {
+    max-width: 100%; /* Максимальная ширина */
+    height: auto; /* Автоматическая высота */
+    border-radius: 10mm; /* Скругленные углы */
+}
+
+/* Эффект при наведении на изображения */
+img:hover {
+    transform: scale(1.1); /* Увеличение при наведении */
+    transition: transform 0.3s ease; /* Плавный переход */
+}
+
+/* Стили для iframe */
+iframe {
+    width: 100%; /* Ширина 100% */
+    height: 400px; /* Высота */
+    border: none; /* Убираем границу */
+    border-radius: 8px; /* Скругленные углы */
+}
+
+/* Стили для аудиоплеера */
+#main_audio {
+    display: flex; /* Flex-контейнер */
+    justify-content: left; /* Выравнивание по левому краю */
+    padding: 15px; /* Внутренние отступы */
+    border-radius: 10px; /* Скругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+    width: 36%; /* Ширина */
+    background-color: rgb(9, 10, 10); /* Цвет фона */
+}
+
+/* Стили для аудио */
+#main_audio audio {
+    width: 100%; /* Ширина 100% */
+    max-width: 300px; /* Максимальная ширина */
+    border-radius: 5px; /* Скругленные углы */
+}
+
+/* Стили для параграфов в статье (составной селектор) */
+article p {
+    font-size: 1.1rem; /* Размер шрифта */
+    line-height: 1.6; /* Межстрочный интервал */
+}
+
+/* Альтернативный селектор для параграфов в статье */
+#article p {
+    font-size: 1.1rem; /* Размер шрифта */
+    line-height: 1.6; /* Межстрочный интервал */
+}
+
+/* Стили для подвала */
+footer {
+    background-color: #2c3e50; /* Цвет фона */
+    color: #ecf0f1; /* Цвет текста */
+    padding: 20px 0; /* Внутренние отступы */
+    text-align: center; /* Выравнивание по центру */
+}
+
+/* Альтернативный селектор для подвала */
+#footer {
+    background-color: #2c3e50; /* Цвет фона */
+    color: #ecf0f1; /* Цвет текста */
+    padding: 20px 0; /* Внутренние отступы */
+    text-align: center; /* Выравнивание по центру */
+}
+
+/* Стили для адреса в подвале */
+footer address {
+    font-style: normal; /* Обычный стиль шрифта */
+}
+
+/* Альтернативный селектор для адреса в подвале */
+#footer address {
+    font-style: normal; /* Обычный стиль шрифта */
+}
+
+/* Стили для ссылок в подвале */
+footer a {
+    color: #3498db; /* Цвет ссылок */
+}
+
+/* Альтернативный селектор для ссылок в подвале */
+#footer a {
+    color: #3498db; /* Цвет ссылок */
+}
+
+/* Эффект при наведении на ссылки в подвале */
+footer a:hover {
+    color: #2980b9; /* Цвет при наведении */
+}
+
+/* Альтернативный селектор для эффекта при наведении */
+#footer a:hover {
+    color: #2980b9; /* Цвет при наведении */
+}
+
+/* Адаптивный дизайн для экранов меньше 768px */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em; /* Размер шрифта */
+    }
+
+    nav a {
+        display: block; /* Блочное отображение */
+        margin: 10px 0; /* Внешние отступы */
+    }
+
+    iframe {
+        height: 300px; /* Высота */
+    }
+
+    table, th, td {
+        font-size: 0.9em; /* Размер шрифта */
+    }
+}
+
+/* Адаптивный дизайн для экранов меньше 480px */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em; /* Размер шрифта */
+    }
+
+    header p {
+        font-size: 1em; /* Размер шрифта */
+    }
+
+    nav a {
+        font-size: 1em; /* Размер шрифта */
+    }
+
+    iframe {
+        height: 200px; /* Высота */
+    }
+
+    table, th, td {
+        font-size: 0.8em; /* Размер шрифта */
+    }
+}
