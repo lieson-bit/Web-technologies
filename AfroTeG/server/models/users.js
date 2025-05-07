@@ -21,6 +21,9 @@ const userSchema = mongoose.Schema({
         enum: ["client", "freelancer"],
         required: true,
     },
+    skills: [String],
+    rating: {type: Number, default: 0},
+    ratingCount: { type: Number, default: 0 },
     country: { type: String, required: true },
     profilePic: { type: String, default: "" },
     biography: { type: String, default: "" },
@@ -37,6 +40,14 @@ const userSchema = mongoose.Schema({
             ref: 'Order',
         },
     ],
+    unreadMessages: {
+        type: Number,
+        default: 0
+      },
+      messages: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Message'
+      }],
     conversations: [
         {
             type: mongoose.Schema.Types.ObjectId,

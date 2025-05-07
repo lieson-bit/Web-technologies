@@ -13,6 +13,8 @@ const profileRoutes = require("./routes/profileRoutes"); // Add profile routes
 const portfolioRoutes = require("./routes/portfolioRoutes"); 
 const jobRoutes = require("./routes/jobRoutes"); // Import job routes
 const competitionRoutes = require("./routes/competitionRoutes");
+const ratingRoutes = require("./routes/ratingRoutes");
+const messageRoutes = require('./routes/messageRoutes');
 
 const app = express();
 
@@ -34,6 +36,8 @@ app.use("/api/profile", profileRoutes); // Profile routes
 app.use("/api/portfolio", portfolioRoutes);
 app.use("/api/jobs", jobRoutes);
 app.use("/api/competitions", competitionRoutes);
+app.use("/api/ratings", ratingRoutes);
+app.use('/api/messages', messageRoutes);
 
 // Connect to MongoDB (Local)
 mongoose

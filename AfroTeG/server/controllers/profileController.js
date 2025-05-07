@@ -68,3 +68,68 @@ exports.getUserById = async (req, res) => {
         res.status(500).json({ message: "Server error", error: error.message });
     }
 };
+
+// Add this to profileController.js
+exports.addSkill = async (req, res) => {
+    try {
+        const { skill } = req.body;
+        const user = await User.findById(req.user.id);
+        
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        if (!user.skills.includes(skill)) {
+            user.skills.push(skill);
+            await user.save();
+        }
+
+        res.status(200).json({ message: "Skill added successfully", user });
+    } catch (error) {
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+exports.removeSkill = async (req, res) => {
+    try {
+        const { skill } = req.body;
+        const user = await User.findById(req.user.id);
+        
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        user.skills = user.skills.filter(s => s !== skill);
+        await user.save();
+
+        res.status(200).json({ message: "Skill removed successfully", user });
+    } catch (error) {
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+// Add this to profileController.js
+exports.getFreelancers = async (req, res) => {
+    try {
+      const freelancers = await User.aggregate([
+        { $match: { role: 'freelancer' } },
+        {
+          $lookup: {
+            from: 'ratings',
+            localField: '_id',
+            foreignField: 'freelancerId',
+            as: 'ratings'
+          }
+        },
+        {
+          $addFields: {
+            averageRating: { $avg: '$ratings.rating' }
+          }
+        },
+        { $project: { password: 0, ratings: 0 } }
+      ]);
+      res.status(200).json(freelancers);
+    } catch (error) {
+      res.status(500).json({ message: 'Server error' });
+    }
+  };
